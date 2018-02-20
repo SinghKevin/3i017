@@ -1,0 +1,4 @@
+package ma_bd;
+
+public class getMySQLConnection {
+
