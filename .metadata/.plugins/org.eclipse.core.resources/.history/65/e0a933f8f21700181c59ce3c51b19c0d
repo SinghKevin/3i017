@@ -1,0 +1,8 @@
+package services;
+
+public class UserServices {
+
+	//LOGIN
+	//LOGOUT
+	//CREATE_USER
+}

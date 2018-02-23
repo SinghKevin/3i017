@@ -1,0 +1,39 @@
+package servlets.user;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
+import org.json.JSONException;
+
+import services.friend.RemoveFriend;
+
+public class ServletLogin extends HttpServlet {
+	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws 						ServletException, IOException {
+		 		 
+		    response.setContentType(" text / plain " );
+			String login = request.getParameter("login");
+			String mdp = request.getParameter("mdp");
+			JSONObject ret;
+			
+			try{
+				ret = services.UserServices.Login(login,mdp);
+			}catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			PrintWriter out = response.getWriter ();
+			response.setContentType("/text/plain");
+			out.println(ret.toString() );
+		 }
+		 
+
+}
+
+	 }
+	
+		 

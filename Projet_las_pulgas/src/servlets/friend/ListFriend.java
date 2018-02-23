@@ -1,4 +1,5 @@
 package servlets.friend;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,8 @@ import java.io.IOException;
 import services.friend.ListFriend;
 
 public class ServletListFriend extends HttpServlet {
-	public void doGet(HttpServletRequest requete, HttpServletResponse reponse) throws ServletException, IOException { 
+	public void doGet(HttpServletRequest requete, HttpServletResponse reponse) throws 								ServletException, IOException { 
+		
 		String key= requete.getParameter("key"); 
 		String id_user = requete.getParameter("id_user"); 
 		String index_debut = requete.getParameter("index_debut");

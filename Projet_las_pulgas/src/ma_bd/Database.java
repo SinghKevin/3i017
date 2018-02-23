@@ -33,7 +33,8 @@ public class Database {
 		Mongo m=new Mongo("localhost");
 		DB db=m.getDB("ma_mongo_bd");
 		DB Collection message = db.getCollection(message);
-		return //TODO;
+		//TODO
+		return null;
 								
 		
 	}

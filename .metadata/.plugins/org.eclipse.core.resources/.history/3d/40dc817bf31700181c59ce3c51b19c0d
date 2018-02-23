@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd"> 
+<web-app> 
+
+	//Mettre toutes les servlets 
+	
+	
+	<display-name>Projet-las-pulgas</display-name> 
+	
+	//Toutes les servlets du package servlets.friend 
+	<servlet> /* Servlet AddFriend*/
+		<servlet-name>AddFriend</servlet-name> 
+		<servlet-class>AddFriend</servlet-class> 
+	</servlet> 
+	
+	<servlet> 
+		<servlet-name>AdditionServlet</servlet-name> 
+		<servlet-class>AdditionServlet</servlet-class> 
+	</servlet> 
+	
+	<servlet-mapping> /* Servlet AddFriend*/
+		<servlet-name>TestTomcat</servlet-name> 
+		<url-pattern>/TestTomcat</url-pattern> 
+	</servlet-mapping> 
+	
+	<servlet-mapping> 
+		<servlet-name>AdditionServlet</servlet-name> 
+		<url-pattern>/AdditionServlet</url-pattern> 
+	</servlet-mapping> 
+</web-app>

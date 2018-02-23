@@ -1,0 +1,171 @@
+package services;
+import servicesTools.ServiceRefused;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import ma_bd.BDTools;
+
+/* Methodes à creer : userExist, checkPassword,insererConnexion,isRoot
+ * Créer ma_bd.BDTools */  
+
+public class UserServices {
+	
+	public UserServices(){
+		
+	}
+
+	public static JSONObject createUser(String login, String pwd, String nom, String prenom) throws JSONException{
+			
+		JSONObject retour = new JSONObject();
+			try{
+				if(ma_bd.userExist(login)){
+					
+					retour.put("Status","KO");
+					retour.put("Error","User exists");
+
+				}else{
+					ma_bd.BDTools.addToDBUser(login, pwd, nom, prenom);
+					retour.put("Status","OK");
+				}
+			}catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			boolean root=ma_bd.UserTools.isRoot(login);
+			String key = ma_bd.UserTools.insererConnexion(login,root);
+			String key = bd.UserTools.insererConnexion(login);
+			ret.put("Status","OK");
+			ret.put("Key",key);
+
+			return retour;
+	}
+		
+	
+	public static JSONObject Login(String login, String pwd){
+		if((login==null) || (pwd ==null){
+			return ErrorJSON.serviceRefused("Wrong",0);
+		}
+		boolean is_user = UserTools.userExists(login);
+		if(! is_user){
+			return servicesTools.ServiceRefused("User exists",1);
+			
+		}
+	}
+
+		
+		
+		/* JSONObject retour = new JSONObject();
+		try{
+			if(!ma_bd.userExists(login)){
+				retour.put("Status", "KO");
+				retour.put("Error", "User doesn't exist ! Join us :) ");
+				return retour;
+			
+			}
+			if(!check_Password(login,pwd)){
+				retour.put("Status", "KO");
+				retour.put("Error", "Wrong Password ! Please try again");
+				return retour;
+			}
+			
+			
+		}catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	}
+	*/
+
+	
+		
+		/*public static JSONObject login (String login, String password){
+			if(login == null || password == null){
+				return ServiceRefused.serviceRefused("Wrong Argument", -1);
+			}
+			
+			try {
+				//Verifie que l'utilisateur
+				boolean is_login = BdTools.userExist(login);
+				if(!is_login){
+					return ServiceRefused.serviceRefused("L'utilisateur n'existe pas ", 1);	
+				}
+			
+				
+				//Verifie le bon mdp
+				boolean check_pwd =  BdTools.checkPassword(login,password);
+				if(!check_pwd){
+					return ServiceRefused.serviceRefused("Erreur de login ou password", 2);
+				}
+			
+				//Recupere l'id de l'utilisateur
+				int id_user=BdTools.getIdUser(login);
+			
+		
+				JSONObject retour  = new JSONObject();
+				String key = BdTools.insertSession(id_user,true);
+				
+				//verifier si il est bien connecté
+				if(key != null && BdTools.getConnect(login)){
+					retour.put("status", "ok");
+					retour.put("key",key);
+					return retour;
+				}else{
+					retour.put("status", "KO");
+					retour.put("Erreur clé ou connection", -1);
+					return retour;
+				}
+				
+				
+			
+					
+				
+			} catch (JSONException e) {
+				return ServiceRefused.serviceRefused("JSON problem"+e.getMessage(),100);
+			}catch(Exception e){
+				return ServiceRefused.serviceRefused("Problem..."+e.getMessage(), 10000);
+			}
+		}
+
+		
+		/**Deconnecte un utilisateur
+		 * 
+		 * @param login identifiant de l'utilisateur
+		 * @return True si il a bien �t� deconnect�
+		 * @throws SQLException 
+		 * @throws JSONException
+		 
+
+		public static JSONObject logout(int key, String login) throws SQLException{
+			if(login == null){
+				return ServiceRefused.serviceRefused("Wrong Argument",-1);
+			}
+			boolean is_login;
+			boolean is_key= BdTools.keyExist(key);
+			JSONObject fin = new JSONObject();
+			try {
+				is_login = BdTools.userExist(login);
+				if(!is_login){
+					return ServiceRefused.serviceRefused("L'utilisateur n'existe pas ", 1);	
+				}
+				if(!is_key){
+					return ServiceRefused.serviceRefused("L'utilisateur n'est pas connecte", 3);
+				}
+				
+				if(BdTools.expireSession(key)){
+					fin.put("session", "ferme");
+				}else{
+					return ServiceRefused.serviceRefused("La session n'a pas expire", 4);
+				}
+			}catch(JSONException | SQLException e){
+				e.printStackTrace();
+			}	
+			return fin;
+			
+		}
+
+	}
+*/
+}

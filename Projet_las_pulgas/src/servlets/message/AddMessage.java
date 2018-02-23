@@ -11,10 +11,8 @@ import org.json.JSONObject;
 import services.AddMessage;
 
 public class ServletAddMessage extends HttpServlet {
-	 protected void doGet(HttpServletRequest request,
-			 			HttpServletResponse response) throws ServletException, IOException {
+	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws 								ServletException, IOException {
 		 		 
-		    response.setContentType(" text / plain " );
 			String key = request.getParameter("key");
 			String content = request.getParameter("content");	
 			JSONObject ret;
@@ -26,9 +24,9 @@ public class ServletAddMessage extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			PrintWriter out = response.getWriter ();
 			response.setContentType("/text/plain");
-			out.println(ret.toString() );
+			PrintWriter out = response.getWriter ();
+			out.println(retour.toString() );
 		 }
 		 
 

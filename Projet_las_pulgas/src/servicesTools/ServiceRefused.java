@@ -13,7 +13,7 @@ public  class ServiceRefused{
 	try {
 		reponse.put("status","OK");
 		reponse.put("message",n);
-		reponse.put("idError",idError);
+		reponse.put("idError",""+idError);
 		
 	} catch (JSONException e) {
 		// TODO Auto-generated catch block
