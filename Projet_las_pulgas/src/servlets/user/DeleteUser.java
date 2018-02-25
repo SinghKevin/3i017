@@ -10,17 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CreateUser extends HttpServlet {
+public class DeleteUser extends HttpServlet {
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			 
 				String login = request.getParameter("login");
-				String pwd = request.getParameter("pwd");
-				String nom = request.getParameter("nom");
-				String prenom = request.getParameter("prenom");
 				JSONObject retour = new JSONObject();
 				
 				try{
-					retour = services.UserServices.CreateUser(login,pwd,prenom,nom);
+					retour = services.UserServices.CreateUser(login);
 				}catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

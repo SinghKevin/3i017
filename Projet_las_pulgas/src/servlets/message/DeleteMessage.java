@@ -1,34 +1,35 @@
 package servlets.message;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.DeleteMessage;
+import services.friend.DeleteMessage;
 
 public class ServletDeleteMessage extends HttpServlet {
-	 protected void doGet(HttpServletRequest request,
-			 			HttpServletResponse response) throws ServletException, IOException {
+	 protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		 		 
-		    response.setContentType(" text / plain " );
 			String key = request.getParameter("key");
 			String id_message = request.getParameter("id_message");
-			JSONObject ret;
+			int id = Integer.parseInt(id_message);
+			JSONObject retour = new JSONObject();
 			
 			try{
-				ret = services.Message(key,id_message);
+				retour = services.Message(key,id_message);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			PrintWriter out = response.getWriter ();
 			response.setContentType("/text/plain");
-			out.println(ret.toString() );
+			PrintWriter out = response.getWriter ();
+			out.println(retour.toString() );
 		 }
 		 
 

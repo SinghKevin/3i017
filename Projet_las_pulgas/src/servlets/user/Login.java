@@ -10,18 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.Friend;
 
 public class Login extends HttpServlet {
 	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws 
 	 											ServletException, IOException {
 		 		 
 			String login = request.getParameter("login");
-			String mdp = request.getParameter("mdp");
-			JSONObject retour= new JSONObject();
+			String pwd = request.getParameter("pwd");
+			JSONObject retour = new JSONObject();
 			
 			try{
-				retour = services.UserServices.Login(login,mdp);
+				retour = services.UserServices.Login(login,pwd);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

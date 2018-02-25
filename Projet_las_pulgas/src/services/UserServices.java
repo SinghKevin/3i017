@@ -65,9 +65,7 @@ return bd.UserTools.userDel(login);
 			
 		}
 	}
-
-		
-		
+			
 		/* JSONObject retour = new JSONObject();
 		try{
 			if(!ma_bd.userExists(login)){

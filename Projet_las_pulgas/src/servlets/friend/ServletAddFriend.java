@@ -13,15 +13,16 @@ import org.json.JSONObject;
 import services.friend.AddFriend;
 
 public class ServletAddFriend extends HttpServlet {
-	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws 								ServletException, IOException {
+	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 	
 
 			String key = request.getParameter("key");
-			String content = request.getParameter("id_friend");	
+			String content = request.getParameter("id_friend");
+			int id = Integer.parseInt(content);	
 			JSONObject retour= new JSONObject();
 			
 			try{
-				retour = services.AddFriend(key, id_friend);
+				retour = services.AddFriend(key, id);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

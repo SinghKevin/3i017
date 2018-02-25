@@ -1,27 +1,28 @@
 package servlets.message;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import services.ListMessage;
+import services.friend.ListMessage;
 
 public class ServletListMessage extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,
 			 			HttpServletResponse response) throws ServletException, IOException {
 		 		 
-		    response.setContentType(" text / plain " );
+		   
 			String key = request.getParameter("key");
 			String list_id_user = request.getParameter("list_id_user");	
-			JSONObject ret;
+			JSONObject retour = new JSONObject();
 			
 			try{
-				ret = services.ListMessage(key, list_id_user);
+				retour = services.ListMessage(key, list_id_user);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -29,7 +30,7 @@ public class ServletListMessage extends HttpServlet {
 			
 			PrintWriter out = response.getWriter ();
 			response.setContentType("/text/plain");
-			out.println(ret.toString() );
+			out.println(retour.toString() );
 		 }
 		 
 
