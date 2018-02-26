@@ -19,7 +19,7 @@ public class DeleteUser extends HttpServlet {
 				JSONObject retour = new JSONObject();
 				
 				try{
-					retour = services.User.CreateUser(login);
+					retour = services.User.DeleteUser(login);
 				}catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -1,5 +1,6 @@
 package ma_bd;
 
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,11 +11,12 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 
 public class Database {
 	private DataSource dataSource;
-	
+	private static Database database=null;
 	public Database(String jndiname) throws SQLException {
 		try {
 			dataSource = (DataSource) new InitialContext().lookup("java:comp/env/" + jndiname);
@@ -29,12 +31,11 @@ public class Database {
 		
 	}
 	
-	public static Collection getCollection(String nom_collection){
+	public static DBCollection getCollection(String nom_collection) throws UnknownHostException{
 		Mongo m=new Mongo("localhost");
 		DB db=m.getDB("ma_mongo_bd");
-		DB Collection message = db.getCollection(message);
-		//TODO
-		return null;
+		DBCollection message = db.getCollection(nom_collection);
+		return message;
 								
 		
 	}
@@ -46,7 +47,6 @@ public class Database {
 					DBStatic.mysql_db, DBStatic.mysql_username, DBStatic.mysql_password));
 		}
 		else {
-			Object database;
 			if (database==null) {
 				database=new Database("jdbc/db");
 			}

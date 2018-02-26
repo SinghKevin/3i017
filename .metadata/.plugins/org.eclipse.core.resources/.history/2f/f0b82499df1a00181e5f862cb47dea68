@@ -1,0 +1,35 @@
+package servlets.friend;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import services.friend.ListFriend;
+
+public class ServletListFriend extends HttpServlet {
+	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 	
+		String key= requete.getParameter("key"); 
+		String id_user = requete.getParameter("id_user"); 
+		String index_debut = requete.getParameter("index_debut");
+		String nb_demandes = requete.getParameter("nb_demandes");	
+		JSONObject retour= new JSONObject();
+			
+		try{
+			retour = services.ListFriend(key, id_user, index_debut, nb_demandes);
+		}catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+			response.setContentType("/text/plain");
+			PrintWriter out = response.getWriter ();
+			out.println(retour.toString() );
+	}
+}

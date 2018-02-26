@@ -1,0 +1,26 @@
+package servicesTools;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public  class ServiceRefused{
+
+	public static JSONObject serviceRefused (String n , int idError) {
+
+	
+
+	JSONObject reponse = new JSONObject();
+	try {
+		reponse.put("status","OK");
+		reponse.put("message",n);
+		reponse.put("idError",""+idError);
+		
+	} catch (JSONException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	return reponse;
+	
+	}	
+}

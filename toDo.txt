@@ -1,0 +1,12 @@
+A faire : 
+
+SQL
+Mongo
+
+test
+
+web.xml
+
+
+Méthodes à implémenter : userExists, checkPassword,insererConnexion,isRoot,...
+
