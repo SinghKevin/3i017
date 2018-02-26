@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.friend.AddFriend;
+import services.Friend.AddFriend;
 
-public class ServletAddFriend extends HttpServlet {
+public class AddFriend extends HttpServlet {
 	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 	
 
 			String key = request.getParameter("key");
-			String content = request.getParameter("id_friend");	
+			String content = request.getParameter("id_friend");
+			int id = Integer.parseInt(content);	
 			JSONObject retour= new JSONObject();
 			
 			try{
-				retour = services.AddFriend(key, id_friend);
+				retour = services.Friend.AddFriend(key, id);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

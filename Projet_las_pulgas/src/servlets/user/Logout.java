@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ServletLogout extends HttpServlet {
+import services.User;
+
+public class Logout extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,
 			 			HttpServletResponse response) throws ServletException, IOException {
 		 		 
@@ -20,7 +22,7 @@ public class ServletLogout extends HttpServlet {
 			
 			try{
 
-				retour = services.UserServices.Logout(logout);
+				retour = services.User.Logout(logout);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -34,6 +36,5 @@ public class ServletLogout extends HttpServlet {
 
 }
 
-	 }
 	
 		 

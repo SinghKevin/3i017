@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.friend.ListMessage;
+import services.Messages.ListMessage;
 
-public class ServletListMessage extends HttpServlet {
+public class ListMessage extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,
 			 			HttpServletResponse response) throws ServletException, IOException {
 		 		 
@@ -22,7 +22,7 @@ public class ServletListMessage extends HttpServlet {
 			JSONObject retour = new JSONObject();
 			
 			try{
-				retour = services.ListMessage(key, list_id_user);
+				retour = services.Messages.ListMessage(key, list_id_user);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

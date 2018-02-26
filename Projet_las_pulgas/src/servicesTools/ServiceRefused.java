@@ -11,8 +11,8 @@ public  class ServiceRefused{
 
 	JSONObject reponse = new JSONObject();
 	try {
-		reponse.put("status","OK");
-		reponse.put("message",n);
+		reponse.put("Status","OK");
+		reponse.put("Message",n);
 		reponse.put("idError",""+idError);
 		
 	} catch (JSONException e) {

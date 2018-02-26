@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import services.User;
 
 public class Login extends HttpServlet {
 	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws 
@@ -20,7 +21,7 @@ public class Login extends HttpServlet {
 			JSONObject retour = new JSONObject();
 			
 			try{
-				retour = services.UserServices.Login(login,pwd);
+				retour = services.User.Login(login,pwd);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

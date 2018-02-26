@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.friend.RemoveFriend;
+import services.Friend.RemoveFriend;
 
-public class ServletRemoveFriend extends HttpServlet {
+public class RemoveFriend extends HttpServlet {
 	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 
-			String key = requete.getParameter("key"); 
-			String id_friend = requete.getParameter("id_friend"); 	
+			String key = request.getParameter("key"); 
+			String id_friend = request.getParameter("id_friend"); 	
 			int id = Integer.parseInt(id);	
 			JSONObject retour= new JSONObject();
 			
 			try{
-				retour = services.RemoveFriend(key, id);
+				retour = services.Friend.RemoveFriend(key, id);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

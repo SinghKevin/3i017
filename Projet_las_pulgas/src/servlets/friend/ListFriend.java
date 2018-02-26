@@ -10,18 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.friend.listFriend;
+import services.Friend.ListFriend;
 
-public class ServletListFriend extends HttpServlet {
-	public void doGet(HttpServletRequest requete, HttpServletResponse reponse) throws ServletException, IOException { 
-		
-		String key= requete.getParameter("key"); 
-		String id_user = requete.getParameter("id_user"); 
-		String index_debut = requete.getParameter("index_debut");
-		String nb_demandes = requete.getParameter("nb_demandes");
-		
-		JSONObject retour = ListFriend.ListFriend(key, id_user, index_debut, nb_demandes);
-		reponse.setContentType("text/plain");
-		reponse.getWriter().print(retour);
+public class ListFriend extends HttpServlet {
+	 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 	
+		String key= request.getParameter("key"); 
+		String id_user = request.getParameter("id_user"); 
+		String index_debut = request.getParameter("index_debut");
+		String nb_demandes = request.getParameter("nb_demandes");	
+		JSONObject retour= new JSONObject();
+			
+		try{
+			retour = services.Friend.ListFriend(key, id_user, index_debut, nb_demandes);
+		}catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+			response.setContentType("/text/plain");
+			PrintWriter out = response.getWriter ();
+			out.println(retour.toString() );
 	}
 }

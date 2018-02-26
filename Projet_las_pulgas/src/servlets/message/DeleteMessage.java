@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.friend.DeleteMessage;
+import services.Messages.DeleteMessage;
 
-public class ServletDeleteMessage extends HttpServlet {
+public class DeleteMessage extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		 		 
 			String key = request.getParameter("key");
@@ -21,7 +21,7 @@ public class ServletDeleteMessage extends HttpServlet {
 			JSONObject retour = new JSONObject();
 			
 			try{
-				retour = services.Message(key,id_message);
+				retour = services.Messages.DeleteMessage(key,id_message);
 			}catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

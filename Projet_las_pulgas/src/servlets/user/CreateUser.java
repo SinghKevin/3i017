@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import services.User;
+
 public class CreateUser extends HttpServlet {
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			 
@@ -20,7 +22,7 @@ public class CreateUser extends HttpServlet {
 				JSONObject retour = new JSONObject();
 				
 				try{
-					retour = services.UserServices.CreateUser(login,pwd,prenom,nom);
+					retour = services.User.CreateUser(login,pwd,prenom,nom);
 				}catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
