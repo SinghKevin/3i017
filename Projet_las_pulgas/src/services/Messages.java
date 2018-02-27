@@ -15,10 +15,10 @@ public class Messages {
 			return ma_bd.UserTools.AddMessage(key,message);
 		}
 		
-		//public static DBCollection RemoveMessage(String key,int id_message)throws JSONException, UnknownHostException
-		//{
-		//	return ma_bd.UserTools.RemoveMessage(key,id_message);
-		//}
+		public static DBCollection DeleteMessage(String key,String id_message)throws JSONException, UnknownHostException, SQLException
+		{
+		return ma_bd.UserTools.DeleteMessage(key,id_message);
+		}
 		
 		public static String ListMessage(String users)throws JSONException, UnknownHostException
 		{

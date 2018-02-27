@@ -1,6 +1,8 @@
 package servlets.user;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,28 +13,30 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import services.User;
+
 public class CreateUser extends HttpServlet {
-	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			 
-				String login = request.getParameter("login");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				
+		 		String login = request.getParameter("login");
 				String pwd = request.getParameter("pwd");
 				String nom = request.getParameter("nom");
 				String prenom = request.getParameter("prenom");
 				JSONObject retour = new JSONObject();
 				
-				try{
-					retour = services.User.createUser(login,pwd,prenom,nom);
-				}catch (JSONException e) {
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					retour= services.User.createUser(login, pwd, nom, prenom);
+				} catch (Exception e) 
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				} 
 				
-				response.setContentType("/text/plain");
+			
+				
+				response.setContentType("text/plain");
 				PrintWriter out = response.getWriter ();
 				out.println(retour.toString() );
 			 }
-			 
 
 }
-
-

@@ -1,6 +1,7 @@
 package servlets.user;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,18 +21,20 @@ public class Login extends HttpServlet {
 			String pwd = request.getParameter("pwd");
 			JSONObject retour = new JSONObject();
 			
-			try{
-				retour = services.User.Login(login,pwd);
-			}catch (JSONException e) {
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				retour= services.User.Login(login, pwd);
+			} catch (Exception e) 
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			} 
 			
-			response.setContentType("/text/plain");
+		
+			
+			response.setContentType("text/plain");
 			PrintWriter out = response.getWriter ();
-			out.println(retour.toString());
-			
-	 }
-	 
+			out.println(retour.toString() );
+		 }
+
 }
-	 

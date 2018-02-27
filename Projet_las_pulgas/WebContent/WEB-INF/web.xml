@@ -1,30 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd"> 
-<web-app> 
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
 
-	<p>Mettre toutes les servlets</p> 
-	
-	
-	<display-name>Projet las pulgas</display-name> 
-	
-	<p>Toutes les servlets du package servlets.friend /* Servlet AddFriend*/ </p>
-	<servlet> 
-		<servlet-name>AddFriend</servlet-name> 
-		<servlet-class>AddFriend</servlet-class> 
-	</servlet> 
-	
-	<servlet> 
-		<servlet-name>AdditionServlet</servlet-name> 
-		<servlet-class>AdditionServlet</servlet-class> 
-	</servlet> 
-	
-	<servlet-mapping> /* Servlet AddFriend*/
-		<servlet-name>TestTomcat</servlet-name> 
-		<url-pattern>/TestTomcat</url-pattern> 
-	</servlet-mapping> 
-	
-	<servlet-mapping> 
-		<servlet-name>AdditionServlet</servlet-name> 
-		<url-pattern>/AdditionServlet</url-pattern> 
-	</servlet-mapping> 
+	<display-name>Projet_las_pulgas</display-name>
+
+
+<servlet>
+	<servlet-name>CreateUser</servlet-name>
+	<servlet-class>servlets.user.CreateUser</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>DeleteUser</servlet-name>
+	<servlet-class>servlets.user.DeleteUser</servlet-class>
+</servlet>
+
+<servlet>
+
+	<servlet-name>Login</servlet-name>
+	<servlet-class>servlets.user.Login</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>Logout</servlet-name>
+	<servlet-class>servlets.user.Logout</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>AddMessage</servlet-name>
+	<servlet-class>servlets.message.AddMessage</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>DeleteMessage</servlet-name>
+	<servlet-class>servlets.message.DeleteMessage</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>ListMessage</servlet-name>
+	<servlet-class>servlets.message.ListMessage</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>AddFriend</servlet-name>
+	<servlet-class>servlets.friend.AddFriend</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>RemoveFriend</servlet-name>
+	<servlet-class>servlets.friend.RemoveFriend</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+	<servlet-name>CreateUser</servlet-name>
+	<url-pattern>/CreateUser</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>DeleteUser</servlet-name>
+	<url-pattern>/DeleteUser</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Login</servlet-name>
+	<url-pattern>/Login</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>Logout</servlet-name>
+	<url-pattern>/Logout</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>AddMessage</servlet-name>
+	<url-pattern>/AddMessage</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>DeleteMessage</servlet-name>
+	<url-pattern>/DeleteMessage</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>ListMessage</servlet-name>
+	<url-pattern>/ListMessage</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>AddFriend</servlet-name>
+	<url-pattern>/AddFriend</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>RemoveFriend</servlet-name>
+	<url-pattern>RemoveFriend</url-pattern>
+</servlet-mapping>
+
+
 </web-app>

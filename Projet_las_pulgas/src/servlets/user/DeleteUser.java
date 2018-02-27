@@ -1,6 +1,7 @@
 package servlets.user;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,19 +19,21 @@ public class DeleteUser extends HttpServlet {
 				String login = request.getParameter("login");
 				JSONObject retour = new JSONObject();
 				
-				try{
-					retour = services.User.DeleteUser(login);
-				}catch (JSONException e) {
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					retour= services.User.DeleteUser(login);
+				} catch (Exception e) 
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				} 
 				
-				response.setContentType("/text/plain");
+			
+				
+				response.setContentType("text/plain");
 				PrintWriter out = response.getWriter ();
 				out.println(retour.toString() );
 			 }
-			 
 
 }
-
 

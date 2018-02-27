@@ -10,27 +10,25 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.Messages.DeleteMessage;
+import services.Messages;
 
 public class DeleteMessage extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		 		 
-			String key = request.getParameter("key");
-			String id_message = request.getParameter("id_message");
-			int id = Integer.parseInt(id_message);
-			JSONObject retour = new JSONObject();
-			
+			String key=request.getParameter("key");
+			String id_message=request.getParameter("id_message");
+			String retour= servicesTools.ServiceRefused.serviceRefused("DeleteMessage Fail", 100).toString();
 			try{
-				retour = services.Messages.DeleteMessage(key,id_message);
-			}catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				retour=services.Messages.DeleteMessage(key,id_message).toString();
+			}catch(Exception e){
+				retour=servicesTools.ServiceRefused.serviceRefused("DeleteMessage Fail", 100).toString();
 			}
 			
-			response.setContentType("/text/plain");
-			PrintWriter out = response.getWriter ();
-			out.println(retour.toString() );
+			response.setContentType("text/plain");
+			PrintWriter out = response.getWriter();
+			out.print(retour);
 		 }
 		 
 
 }
+

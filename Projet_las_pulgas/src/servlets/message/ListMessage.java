@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import services.Messages.ListMessage;
+import services.Messages;
 
 public class ListMessage extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,
@@ -29,7 +29,7 @@ public class ListMessage extends HttpServlet {
 			}
 			
 			PrintWriter out = response.getWriter ();
-			response.setContentType("/text/plain");
+			response.setContentType("text/plain");
 			out.println(retour.toString() );
 		 }
 		 
