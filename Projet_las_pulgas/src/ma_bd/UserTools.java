@@ -222,8 +222,7 @@ public class UserTools {
 		return null;
 	}
 
-	public static DBCollection AddMessage(String key, String message)
-			throws UnknownHostException, SQLException {
+	public static DBCollection AddMessage(String key, String message) throws UnknownHostException, SQLException {
 		DBCollection message_co = Database.getCollection("message");
 		BasicDBObject bdo = new BasicDBObject();
 		String random=UserTools.generate_key();
