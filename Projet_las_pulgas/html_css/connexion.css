@@ -1,7 +1,24 @@
-body
-{
-  /*    background: url("ks.jpg") fixed no-repeat top  left;*/
-  background-color: #2996C2;
+.imageflottante{
+	float:left;
+}
+
+header {
+	border:  3px solid black;
+	box-shadow :6px 6px 6px black;
+}
+
+header #logo{
+	width:100%;
+	height: 50px;
+	position:absolute;
+	top:10;
+	left:10 ;
+	float:left;
+}
+
+body{
+	/*    background: url("ks.jpg") fixed no-repeat top  left;*/
+	background-color: #2996C2; /* #9FDAED ou #2996C2*/
 }
 
 h1 {
@@ -9,21 +26,62 @@ h1 {
 	text-align:center;
 	margin-bottom:30px;
 	text-shadow: 1px 1px Opx black;
+	font-size: 3em;
+	font-weight: bold;
+
 }
+
+h2 {
+	color:white;
+	text-align:center;
+	margin-bottom:30px;
+	text-shadow: 1px 1px Opx black;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.taille{
+	font-size:18px;
+	font-weight: bold;
+	color: white;
+}
+
+.case{
+	border-width:5px;
+	border-style:solid;
+	border-color:black;
+	border-collapse: collapse;
+}
+table{
+    
+    border-collapse: collapse; 
+}
+
 #t1 {
 	width:300px;
-	margin-left:30%;
+	margin-left:42%;
 }
+
 tr{
-	height:50px;
+	height:60px;
+
 	
 }
-tr:first-child td { //premiere colonne de chaque ligne
+
+
+
+
+/*tr:first-child td { //premiere colonne de chaque ligne
 	padding-top:20px;
 }
-input[type="text"]{ //pour les input de type text
+*/
+
+/*input[type="text"]{ //pour les input de type text
 	width:100%;
 }
+*/
+/*
 p,a{ //pour paragraph et lien
 	color:black;
 } 
+*/
