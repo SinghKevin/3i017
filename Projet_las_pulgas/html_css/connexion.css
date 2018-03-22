@@ -2,6 +2,11 @@
 	float:left;
 }
 
+
+#imageflottante2{
+	float:left;
+	padding-left: 45px;
+}
 header {
 	border:  3px solid black;
 	box-shadow :6px 6px 6px black;
@@ -14,6 +19,15 @@ header #logo{
 	top:10;
 	left:10 ;
 	float:left;
+}
+
+#slogan{
+	color:white;
+	text-align:left;
+	font-size: 1.3em;
+	font-weight: bold;
+	color:black;
+	padding-left: 15px;
 }
 
 body{
@@ -47,19 +61,31 @@ h2 {
 }
 
 .case{
-	border-width:5px;
+	border-width:4px;
 	border-style:solid;
 	border-color:black;
 	border-collapse: collapse;
+	/*padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;*/
 }
 table{
-    
-    border-collapse: collapse; 
+
+	border-collapse: collapse; 
+}
+
+#legend{
+	font-size:30px;
+	font-weight: bold;
+	color: black;
+	width:300px;
+	margin-left:30%;
 }
 
 #t1 {
 	width:300px;
-	margin-left:42%;
+	margin-left:55%;
 }
 
 tr{
@@ -67,6 +93,7 @@ tr{
 
 	
 }
+
 
 
 
