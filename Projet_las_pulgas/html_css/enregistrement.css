@@ -1,9 +1,13 @@
+.imageflottante{
+	float:left;
+}
 body
 {
 	/*    background: url("ks.jpg") fixed no-repeat top  left;*/
 	background-color: #9FDAED;
 	/*2996C2;*/
 }
+
 
 
 header {
@@ -54,4 +58,24 @@ p,a{ //pour paragraph et lien
 	border-style:double;
 	border-color:black;
 
+}
+
+
+.button {
+	border: none;
+	background-color: white;
+	font-size: 16px;
+    margin: 4px 2px;
+	padding: 6px 22px;
+	border-radius: 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button:hover{
+	background-color: 	#0F9295;
+}
+
+#footer{
+	color:black;
+	text-align:center;
 }
