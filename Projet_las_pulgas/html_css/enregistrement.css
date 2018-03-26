@@ -1,6 +1,7 @@
 .imageflottante{
 	float:left;
 }
+
 body
 {
 	/*    background: url("ks.jpg") fixed no-repeat top  left;*/
@@ -8,12 +9,11 @@ body
 	/*2996C2;*/
 }
 
-
-
 header {
 	border:  3px solid black;
 	box-shadow :6px 6px 6px black;
 }
+
 #logo{
 	
 	width:100%;
@@ -23,6 +23,7 @@ header {
 	left:0.5;*/
 	float:left;
 }
+
 h1 {
 	font-family: Arial, "Times New Roman";
 	font-weight: bold;
@@ -31,32 +32,63 @@ h1 {
 	margin-bottom:30px;
 	text-shadow: 1px 1px Opx black;
 }
+
 #t1 {
 	width:300px;
 	margin-left:30%;
 }
+
 tr{
 	font-family: Arial, "Times New Roman";
 	font-weight: bold;
 	color:black;
-	height:50px;
+	height:10px;
+	width: 150px;
 	
 }
+
 tr:first-child td { //premiere colonne de chaque ligne
 	padding-top:20px;
 
 }
+
 input[type="text"]{ //pour les input de type text
 	width:100%;
 }
+.text_input{
+	height: 25px;
+	width: 120%;
+	/*margin-left: 20px;*/
+	margin-bottom: 20px;
+	padding-left: 15px;
+	background: #50597b;
+	color: #fff;
+	font-size: 15px;
+	border: solid 1px #1f253d;
+	border-radius: 5px;
+}
+
 p,a{ //pour paragraph et lien
 	color:black;
 } 
 
-#cadre{
+/*#cadre{
 	border-width:5px;
 	border-style:double;
 	border-color:black;
+
+}*/
+
+.rounded{
+	font-family: icomoon;
+	color: white;
+	border-radius: 10px;
+	background-color: #394166;
+
+	padding-left: 45px;
+	/*padding-right: 45px;*/
+	padding-top: 20px;
+	padding-bottom: 20px;
 
 }
 
