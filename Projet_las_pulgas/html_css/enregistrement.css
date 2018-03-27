@@ -41,7 +41,7 @@ h1 {
 tr{
 	font-family: Arial, "Times New Roman";
 	font-weight: bold;
-	color:black;
+	color:white;
 	height:10px;
 	width: 150px;
 	
@@ -62,7 +62,7 @@ input[type="text"]{ //pour les input de type text
 	margin-bottom: 20px;
 	padding-left: 15px;
 	background: #50597b;
-	color: #fff;
+	color: white;
 	font-size: 15px;
 	border: solid 1px #1f253d;
 	border-radius: 5px;
@@ -72,11 +72,15 @@ p,a{ //pour paragraph et lien
 	color:black;
 } 
 
+#date{
+
+	text-align:center;
+
+}
 /*#cadre{
 	border-width:5px;
 	border-style:double;
 	border-color:black;
-
 }*/
 
 .rounded{
@@ -106,7 +110,15 @@ p,a{ //pour paragraph et lien
 .button:hover{
 	background-color: 	#0F9295;
 }
+#case{
+	text-align:center;
+}
 
+
+#deja_enregistre{
+	text-align:center;
+	font-family: Arial, "Times New Roman";
+}
 #footer{
 	color:black;
 	text-align:center;
