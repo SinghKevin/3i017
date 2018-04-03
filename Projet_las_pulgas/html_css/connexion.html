@@ -3,7 +3,18 @@
 	<title> Connexion </title> 
 	<link href = "connexion.css" rel="stylesheet" type="text/css" >
 </head>
-
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/common.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/connexion.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/enregistrement.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/follow.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/init.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/makePanel.js"></script>
+			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/message.js"></script>
+				<script>
+				$(makeConnexionPanel);
+				$(init);
+				</script>
 <header >
 	<p>	
 		<a href="/">
@@ -24,13 +35,13 @@
 <body> 
 
 </br>
-<form  class="rounded id ="cadre" method="get" action="javascript:connexion">
+<form  class="rounded id" method="get" action="javascript:(function(){return;})()" onSubmit="javascript:connexion(this)">
 <h2> Ouvrez votre session </h2>
 </br>
 	<table id="table1" >
 		<tr>
 			<td> Login </td>
-			<td> <input class="text_input" type ="text" name="Login"/> </td>
+			<td> <input class="text_input" type ="text" name="login"/> </td>
 		</tr>
 		
 		<tr>
@@ -43,8 +54,8 @@
 
 			<tr> <td><input class="button" type ="submit" value="Connexion"/> </td>
 				<td><input  class="button" type="reset" name="nom" value=" Annuler "/> </td></tr>
-				<tr> <td> <a href="---"> Mot de passe perdu </a> </td> </tr>
-				<tr><td> <a href="---"> Pas encore inscrit ?</a> </td> </tr>
+				<tr> <td> <a href="javascript:makeMdpLostPanel()"> Mot de passe perdu </a> </td> </tr>
+				<tr><td> <a href="javascript:makeEnregistrementPanel()"> Pas encore inscrit ?</a> </td> </tr>
 			</table>
 		<!--
 		<h2> Ouvrir session </h2>
