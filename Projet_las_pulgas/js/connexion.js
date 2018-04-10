@@ -33,9 +33,10 @@ function connecte(login,pass) {
 	var id=78;
 	var key="ABCD";
 	if (!noConnection){}
-		else
-			responseConnexion({"key":key,"id":id,"login":login,"follows":[2]});
+	else{
+		responseConnexion({"key":key,"id":id,"login":login,"follows":[2]});
 	}
+}
 
 function responseConnexion(rep) {
 		if (rep.erreur==undefined) {

@@ -2,21 +2,25 @@ function makeConnexionPanel()
 {
 	$("body").load("html_css/connexion.html");
 }
+function makeConnexionPanel2()
+{
+	$("body").load("../html_css/connexion.html");
+}
 function makeEnregistrementPanel()
 {
-$("body").load("/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/html_css/enregistrement.html");
+$("body").load("../html_css/enregistrement.html");
 }
 function makeMdpLostPanel()
 {
-	$("body").load("html_css/mdp_lost.html");
+	$("body").load("../html_css/mdp_lost.html");
 }
 function makeMainPanel(fromId,fromLogin,query)
 {
-	$("body").load("html_css/main.html");
+	$("body").load("../html_css/main.html");
 }
 function makeProfilPanel()
 {
-	$("body").load("/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/html_css/enregistrement.html");
+	$("body").load("../html_css/main.html");
 }
 function makeProfilPanel2(fromId,fromLogin,query)
 {

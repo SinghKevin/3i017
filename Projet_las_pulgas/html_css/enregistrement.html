@@ -3,6 +3,7 @@
 <head> 
 	<title> Enregistrement </title> 
 	<link href = "enregistrement.css" rel="stylesheet" type="text/css" >
+	<meta http-equiv='Content-Type' content='text/html;charset=utf-8' /> 
 </head>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script type="text/javascript" src="/users/Etu8/3202238/Documents/L3/3I017/Projet_las_pulgas/js/common.js"></script>
@@ -21,7 +22,7 @@
 	<header>
 		<p>
 			<a href="/">
-				<img src="images/ks.jpg" class="imageflottante" alt="le logo" height="80" width="80"></a>
+				<img src="images/ks.jpg" class="imageflottante" alt="le logo" height="65" width="65"></a>
 			</p>
 
 			<h1> Enregistrement </h1>
@@ -65,24 +66,27 @@
 		</tr>
 	</table>
 	<p>
-		<input id="case" type="checkbox" name="checkbox">
-		En cochant cette case, vous acceptez nos Conditions et indiquez que vous avez lu notre Politique d’utilisation des données.
+		<input id="case" type="checkbox" required name="checkbox">
+		En cochant cette case, vous acceptez nos conditions et indiquez que vous avez lu notre Politique d’utilisation des données.
 	</br>
 	</br>
 
 	<tr>
 		<a href="javascript:makeConnexionPanel()" style="text-decoration:none">
-		<td> <input class="button" type ="submit" value="Enregistrez-vous !"/> </td>
-		<td><input class="button" type ="submit" value="Annuler"/> </td>
+		<td> <input class="button1" type ="submit" value="Enregistrez-vous !"/> </td>
+		<td><input class="button2" type ="submit" value="Annuler"/> </td>
 	</tr>
 
 	</p>
-		<a  id="deja_enregistre"  href="/">Déjà enregistré ? </a>
+		<a  id="deja_enregistre"  href="javascript:makeConnexionPanel2()">Déjà enregistré ? </a>
 	</form>
 </br>
 </br>
+</br>
+</br>
+</br>
 <footer id="footer">
-	Las pulgas project - Copyright 2018
+	 Las Pulgas Project  - Copyright 2018
 </footer>
 </body>
 </html>

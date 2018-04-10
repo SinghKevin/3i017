@@ -5,13 +5,18 @@
 body
 {
 	/*    background: url("ks.jpg") fixed no-repeat top  left;*/
-	background-color: #9FDAED;
+	background-color: #58A5BF;
+	/*#9FDAED;
 	/*2996C2;*/
 }
 
 header {
-	border:  3px solid black;
+	
 	box-shadow :6px 6px 6px black;
+	background-color: #F1DCC9;
+	border-radius: 10px;
+	border: solid 3px #1f253d;
+
 }
 
 #logo{
@@ -27,21 +32,23 @@ header {
 h1 {
 	font-family: Arial, "Times New Roman";
 	font-weight: bold;
-	color:white;
+	color:black;
 	text-align:center;
 	margin-bottom:30px;
 	text-shadow: 1px 1px Opx black;
+
+
 }
 
 #t1 {
 	width:300px;
-	margin-left:30%;
+	margin-left:38%;
 }
 
 tr{
 	font-family: Arial, "Times New Roman";
 	font-weight: bold;
-	color:white;
+	color:black;
 	height:10px;
 	width: 150px;
 	
@@ -61,8 +68,8 @@ input[type="text"]{ //pour les input de type text
 	/*margin-left: 20px;*/
 	margin-bottom: 20px;
 	padding-left: 15px;
-	background: #50597b;
-	color: white;
+	background: #DBBFA4;
+	color: black;
 	font-size: 15px;
 	border: solid 1px #1f253d;
 	border-radius: 5px;
@@ -85,9 +92,13 @@ p,a{ //pour paragraph et lien
 
 .rounded{
 	font-family: icomoon;
-	color: white;
+	color: black;
 	border-radius: 10px;
-	background-color: #394166;
+	background-color: #F1DCC9;
+	border-radius: 10px;
+	border: solid 2px #1f253d;
+	box-shadow :4px 4px 4px black;
+
 
 	padding-left: 45px;
 	/*padding-right: 45px;*/
@@ -97,7 +108,7 @@ p,a{ //pour paragraph et lien
 }
 
 
-.button {
+.button1 {
 	border: none;
 	background-color: white;
 	font-size: 16px;
@@ -106,20 +117,43 @@ p,a{ //pour paragraph et lien
 	border-radius: 10px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    margin-left:35%;
 }
-.button:hover{
+
+
+.button2 {
+	border: none;
+	background-color: white;
+	font-size: 16px;
+    margin: 4px 2px;
+	padding: 6px 22px;
+	border-radius: 10px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    margin-left:10%;
+}
+
+.button1:hover{
+	background-color: 	#0F9295;
+}
+
+.button2:hover{
 	background-color: 	#0F9295;
 }
 #case{
 	text-align:center;
+	margin-left:22%;
 }
 
 
 #deja_enregistre{
 	text-align:center;
 	font-family: Arial, "Times New Roman";
+	margin-left:46%;
 }
 #footer{
 	color:black;
 	text-align:center;
+	
+
 }
